@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Ixsael Hernandez</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="home-page">
+
+    <div id="progress-bar-container">
+        <div id="progress-bar"></div>
+    </div>
+
+     <!-- Header Section -->
+     <header id="header" class="home-header">
+        <h1>Homepage</h1>
+    </header>
+
+    <main id="main" class="home-main">
+
+        <!-- Introduction Section -->
+        <section id="intro" class="home-intro">
+            
+            <img 
+                src="../images/Me-Home.jpg" 
+                alt="Profile picture of Ixsaael Hernandez" 
+                id="my-profile" 
+                tabindex="0" 
+                role="button" 
+                aria-label="Click to enlarge profile picture"
+                onclick="openLightbox(this.src)"
+                onkeydown="handleProfileKeydown(event, this.src)"
+            >
+
+
+            <p>Explore the professional and personal things I have done over these past few years. 
+                Take a dive into acedemic acheivemnt achievemnets, projects, and goals while also learning
+                 more about me and what I do in the spare time I have.
+            </p>
+        </section>
+
+        <!-- Navigation Links -->
+        <section id="nav-section" class="home-nav-section">
+            <a href="./personal/professional.html" class="home-icons">Personal</a>
+            <a href="./personal/diversion.html" class="home-icons">Diversions</a>
+        </section>
+    </main>
+
+    <!-- Modal for Enlarged Image -->
+    <div id="image-modal" class="modal" aria-hidden="true" tabindex="-1" role="dialog" aria-label="Enlarged Image">
+        <button class="close" aria-label="Close" onclick="closeLightbox()">&times;</button>
+        <img class="modal-content" id="modal-image" alt="Enlarged image">
+    </div>
+
+    <script>
+        window.addEventListener("scroll", () => {
+            const progressBar = document.getElementById("progress-bar");
+            const totalHeight = document.body.scrollHeight - window.innerHeight;
+            const scrollProgress = (window.scrollY / totalHeight) * 100;
+            progressBar.style.width = `${scrollProgress}%`;
+        });
+    
+        // Ensure bar is full if no scrolling is needed
+        window.addEventListener("resize", () => {
+            const progressBar = document.getElementById("progress-bar");
+            const totalHeight = document.body.scrollHeight - window.innerHeight;
+            if (totalHeight <= 0) {
+                progressBar.style.width = "100%";
+            } else {
+                progressBar.style.width = `${(window.scrollY / totalHeight) * 100}%`;
+            }
+        });
+    
+        // Initial check for when the page loads
+        document.addEventListener("DOMContentLoaded", () => {
+            const progressBar = document.getElementById("progress-bar");
+            const totalHeight = document.body.scrollHeight - window.innerHeight;
+            if (totalHeight <= 0) {
+                progressBar.style.width = "100%";
+            }
+        });
+
+        function openLightbox(src) {
+            const modal = document.getElementById("image-modal");
+            const modalImage = document.getElementById("modal-image");
+        
+            modal.style.display = "block";
+            modalImage.src = src; // Set the source of the image in the modal
+        }
+        
+        function closeLightbox() {
+            const modal = document.getElementById("image-modal");
+            modal.style.display = "none";
+        }
+        
+        // Close the modal when clicking outside the image
+        window.onclick = function (event) {
+            const modal = document.getElementById("image-modal");
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        };
+        
+        function handleProfileKeydown(event, src) {
+            if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                openLightbox(src);
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            // Trap focus inside the modal
+            function trapFocus(modal) {
+                const focusableElements = modal.querySelectorAll('button, [tabindex="0"], img');
+                const firstFocusable = focusableElements[0];
+                const lastFocusable = focusableElements[focusableElements.length - 1];
+        
+                modal.addEventListener('keydown', (e) => {
+                    if (e.key === 'Tab') {
+                        if (e.shiftKey && document.activeElement === firstFocusable) {
+                            e.preventDefault();
+                            lastFocusable.focus();
+                        } else if (!e.shiftKey && document.activeElement === lastFocusable) {
+                            e.preventDefault();
+                            firstFocusable.focus();
+                        }
+                    }
+                    if (e.key === 'Escape') {
+                        closeLightbox();
+                    }
+                });
+        
+                firstFocusable.focus();
+            }
+        
+            // Handle modal open
+            function openLightbox(src) {
+                const modal = document.getElementById("image-modal");
+                const modalImage = document.getElementById("modal-image");
+        
+                modalImage.src = src;
+                modal.setAttribute("aria-hidden", "false");
+                modal.style.display = "block";
+                trapFocus(modal);
+            }
+        
+            // Handle modal close
+            function closeLightbox() {
+                const modal = document.getElementById("image-modal");
+                modal.setAttribute("aria-hidden", "true");
+                modal.style.display = "none";
+            }
+        
+            // Handle slideshow navigation
+            document.querySelectorAll(".prev, .next").forEach((button) => {
+                button.addEventListener("keydown", (e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                        button.click();
+                    }
+                });
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+            // Function to open the lightbox
+            function openLightbox(src) {
+                const modal = document.getElementById("image-modal");
+                const modalImage = document.getElementById("modal-image");
+        
+                modalImage.src = src; // Set the source of the modal image
+                modal.setAttribute("aria-hidden", "false");
+                modal.style.display = "block";
+        
+                // Trap focus within the modal
+                const closeButton = modal.querySelector(".close");
+                closeButton.focus(); // Focus on the close button
+            }
+        
+            // Function to close the lightbox
+            function closeLightbox() {
+                const modal = document.getElementById("image-modal");
+                modal.setAttribute("aria-hidden", "true");
+                modal.style.display = "none";
+        
+                // Return focus to the triggering element (profile image)
+                const lastFocusedElement = document.querySelector("[data-last-focused='true']");
+                if (lastFocusedElement) {
+                    lastFocusedElement.focus();
+                }
+            }
+        
+            // Event listener for Esc key to close the modal
+            document.addEventListener("keydown", (event) => {
+                const modal = document.getElementById("image-modal");
+                if (modal.style.display === "block" && event.key === "Escape") {
+                    closeLightbox();
+                }
+            });
+        
+            // Function to handle profile image keydown for keyboard users
+            function handleProfileKeydown(event, src) {
+                if (event.key === "Enter" || event.key === " ") {
+                    event.preventDefault();
+                    const triggeringElement = event.target;
+                    triggeringElement.setAttribute("data-last-focused", "true"); // Mark this element as last focused
+                    openLightbox(src);
+                }
+            }
+        
+            // Assign keydown event to profile pictures
+            const profileImages = document.querySelectorAll(".home-intro img, .professional-intro img, .diversion-intro img");
+            profileImages.forEach((image) => {
+                image.addEventListener("keydown", (event) => handleProfileKeydown(event, image.src));
+            });
+        });
+    </script>
+    
+</body>
+</html>

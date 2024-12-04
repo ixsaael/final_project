@@ -1,0 +1,715 @@
+/* General Reset */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5deb3; /* Default tan background for other pages */
+    color: #00274C; /* U-M Blue for text */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Homepage Specific Styles */
+body.home-page {
+    background-color: #add8e6; /* Light blue background for homepage */
+}
+
+/* Header Section */
+.professional-header {
+    background-color: #FFCB05; /* U-M Maize for professional page */
+}
+
+.home-header {
+    background-color: #cc5c5c; /* Darker red for homepage header */
+    color: #090909;
+    text-align: center;
+    padding: 30px;
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Profile Picture */
+.home-intro img {
+    display: block;
+    margin: 30px auto; /* Center the image */
+    width: 150px;
+    height: 200px;
+    border-radius: 50%; /* Make the image oval */
+    object-fit: cover;
+    border: 4px solid #cc5c5c; /* Darker red border matching header */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Description Text */
+.home-intro p {
+    text-align: center; /* Center the text */
+    font-size: 1.2em;
+    margin: 20px auto;
+    max-width: 600px; /* Limit width for better readability */
+}
+
+/* Navigation Links as Buttons (Homepage) */
+.home-nav-section {
+    display: flex; /* Arrange buttons side by side */
+    justify-content: space-between;
+    margin: 20px auto;
+    width: calc(100% - 40px); /* Ensure proper spacing on the sides */
+}
+
+.home-nav-section a {
+    flex: 1; /* Each button takes up half the available space */
+    text-align: center;
+    text-decoration: none;
+    padding: 20px 0; /* Increased height for taller buttons */
+    margin: 0 10px; /* Add spacing between the two buttons */
+    background-color: #cc5c5c; /* Darker red background */
+    color: #000000; /* Black text for buttons */
+    border-radius: 10px;
+    font-weight: bold;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.home-nav-section a:hover {
+    background-color: #b04f4f; /* Even darker red on hover */
+    transform: scale(1.05); /* Slight enlargement on hover */
+}
+
+/* Ensure other pages remain unaffected */
+.professional-page-tabs a.nav-button {
+    background-color: #FFCB05; /* Keep the professional page buttons unchanged */
+    color: #00274C;
+}
+
+/* Footer Section (Shared Styles) */
+.home-footer {
+    background-color: #00274C; /* U-M Blue */
+    color: #FFCB05; /* U-M Maize */
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    border-radius: 10px 10px 0 0;
+}
+
+.home-footer a {
+    color: #FFCB05;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.home-footer a:hover {
+    color: #FFFFFF; /* White */
+}
+
+/* Header Section */
+.professional-header {
+    background-color: #FFCB05; /* U-M Maize */
+    color: #00274C; /* U-M Blue */
+    text-align: center;
+    padding: 30px;
+    border-radius: 10px;
+    margin: 20px; /* Added margin around the header */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Navigation Buttons (Home & Diversion) */
+.professional-page-tabs {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px auto;
+    width: calc(100% - 40px); /* Consistent alignment with the header */
+}
+
+.nav-button {
+    background-color: #FFCB05; /* U-M Maize */
+    color: #00274C; /* U-M Blue */
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    padding: 20px 0;
+    width: calc(50% - 10px); /* Each button takes half the width with a gap */
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 0 5px; /* Space between buttons */
+    font-size: 1.2em; /* Increased font size for better visibility */
+}
+
+.nav-button:hover {
+    background-color: #004B87; /* Darker Blue */
+    color: #FFFFFF; /* White text on hover */
+    transform: scale(1.05); /* Slight enlargement on hover */
+}
+
+/* Sticky Navigation */
+.professional-nav-tabs {
+    background-color: #00274C; /* U-M Blue for sticky nav */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.skip-link {
+    color: #FFCB05; /* U-M Maize */
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-size: 1.1em; /* Increased font size for skip links */
+}
+
+.skip-link:hover {
+    background-color: #004B87; /* Darker blue on hover */
+    color: #FFFFFF; /* White text */
+}
+
+/* Main Content */
+.professional-main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Introduction Section */
+.professional-intro {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.professional-intro img {
+    display: block;
+    margin: 30px auto; /* Increased margin around the profile picture */
+    width: 200px;
+    height: 200px;
+    border-radius: 20px; /* Rounded corners for cube shape */
+    object-fit: cover; /* Ensure the image fills the box */
+    border: 4px solid #FFCB05; /* U-M Maize border */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Diversion Introduction Text */
+.professional-intro p {
+    text-align: center; /* Center the text */
+    font-size: 1.2em; /* Adjust font size for readability */
+    margin: 20px auto; /* Add space around the text */
+    max-width: 600px; /* Limit width for better readability */
+    line-height: 1.6; /* Improve line spacing */
+    color: #000000; /* Light grey text */
+}
+
+.professional-intro p {
+    font-size: 1.2em;
+}
+
+/* Content Section */
+.professional-content {
+    background-color: #00274C; /* Changed to U-M Blue */
+    color: #FFCB05; /* U-M Maize text for contrast */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+    margin-bottom: 40px;
+}
+
+/* Card Design */
+.card {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #FFCB05; /* U-M Maize */
+    color: #00274C; /* U-M Blue */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    margin-top: 20px;
+    align-items: center;
+    position: relative; /* Positioning for placing elements within the card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Slightly enlarge the card */
+    z-index: 10; /* Bring it above other cards */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5); /* Stronger shadow on hover */
+}
+
+/* Card Title Styling */
+.card h2 {
+    font-family: 'Stencil', sans-serif; /* A stencil-like font similar to the image */
+    font-size: 2em;
+    color: #00274C; /* U-M Blue */
+    position: absolute; /* Place title within the card */
+    top: 10px; /* Align to top */
+    right: 10px; /* Align to right */
+    text-transform: uppercase; /* Ensure text is all caps for a bold look */
+    z-index: 20; /* Ensure it appears above other elements */
+    letter-spacing: 2px; /* Add some spacing for a bolder effect */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Shadow for better readability */
+}
+
+.image-container {
+    flex: 1; /* Adjust for card layout */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFCB05; /* Yellow background */
+    padding: 20px; /* Padding around the image */
+    border-radius: 10px; /* Optional: Rounded corners */
+}
+
+.image-container img {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.info {
+    flex: 2;
+    padding: 20px;
+    text-align: left;
+}
+
+.info h2 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.info p {
+    font-size: 1em;
+}
+
+/* Footer Section */
+.professional-footer {
+    background-color: #00274C; /* U-M Blue */
+    color: #FFCB05; /* U-M Maize */
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    border-radius: 10px 10px 0 0;
+}
+
+.professional-footer a {
+    color: #FFCB05;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.professional-footer a:hover {
+    color: #FFFFFF; /* White */
+}
+
+/* General Reset for Diversion Page */
+body.diversion-page {
+    font-family: Arial, sans-serif;
+    background-color: #000000; /* Black background for diversion page */
+    color: #d3d3d3; /* Light grey text */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Header Section */
+.diversion-header {
+    background-color: #B3C0F5; /* Royal Blue for header */
+    color: #2c2c2c; /* Light grey text */
+    text-align: center;
+    padding: 30px;
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Navigation Buttons */
+.diversion-page-tabs {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px auto;
+    width: calc(100% - 40px);
+}
+
+.diversion-nav-button {
+    background-color: #B3C0F5; /* Royal Blue */
+    color: #2c2c2c; /* Light grey text */
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    padding: 20px 0;
+    width: calc(50% - 10px);
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 0 5px;
+    font-size: 1.2em;
+}
+
+.diversion-nav-button:hover {
+    background-color: #B3C0F5; /* Darker Royal Blue on hover */
+    transform: scale(1.05);
+}
+
+/* Sticky Navigation */
+.diversion-nav-tabs {
+    background-color: #2c2c2c; /* Black background */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.diversion-skip-link {
+    color: #B3C0F5; /* Royal Blue for skip links */
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-size: 1.1em;
+}
+
+.diversion-skip-link:hover {
+    background-color: #B3C0F5; /* Darker Royal Blue on hover */
+    color: #ffffff; /* White text */
+}
+
+/* Profile Picture for Diversion Page */
+.diversion-intro img {
+    display: block;
+    margin: 30px auto;
+    width: 200px; /* Set to a square size */
+    height: 200px; /* Ensures the image remains circular */
+    border-radius: 50%; /* Perfect circle */
+    object-fit: cover;
+    border: 4px solid #B3C0F5; /* Royal Blue border */
+    box-shadow: 0 0 10px 5px rgba(65, 105, 225, 0.5); /* Initial glow */
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Diversion Introduction Text */
+.diversion-intro p {
+    text-align: center; /* Center the text */
+    font-size: 1.2em; /* Adjust font size for readability */
+    margin: 20px auto; /* Add space around the text */
+    max-width: 600px; /* Limit width for better readability */
+    line-height: 1.6; /* Improve line spacing */
+    color: #d3d3d3; /* Light grey text */
+}
+
+/* Main Content */
+.diversion-main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Content Section */
+.diversion-content {
+    background-color: #2c2c2c; /* Dark grey for content background */
+    color: #B3C0F5; 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+    margin-bottom: 40px;
+}
+
+
+/* Scoped Individual Cards */
+.diversion-content .card {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #B3C0F5; /* Royal Blue */
+    color: #000000; /* Light grey text */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    margin-top: 20px;
+    align-items: center;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.diversion-content .card:hover {
+    transform: scale(1.05); /* Slightly enlarge the card */
+    z-index: 10; /* Bring it above other cards */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5); /* Stronger shadow on hover */
+}
+
+/* Scoped Card Title Styling */
+.diversion-content .card h2 {
+    font-size: 1.5em;
+    text-transform: uppercase;
+    text-align: center;
+    color: #2c2c2c; /* Light grey for titles */
+}
+
+/* Scoped Image Container */
+.diversion-content .image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #B3C0F5; /* Dark grey background for image container */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.diversion-content .image-container img {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Scoped Card Info Section */
+.diversion-content .info {
+    flex: 2;
+    padding: 20px;
+    text-align: left;
+}
+
+.diversion-content .info h2 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    color: #2c2c2c; /* Light grey for headings */
+}
+
+.diversion-content .info p {
+    font-size: 1em;
+    color: #000000; /* Light grey for text */
+}
+
+/* Footer Section */
+.diversion-footer {
+    background-color: #1c1c1c; /* Dark grey for footer */
+    color: #B3C0F5; /* Light grey text */
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    border-radius: 10px 10px 0 0;
+}
+
+.diversion-footer a {
+    color: #B3C0F5; /* Royal Blue links */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.diversion-footer a:hover {
+    color: #B3C0F5; /* Darker Royal Blue on hover */
+}
+
+@font-face {
+    font-family: 'Stencil';
+    src: url('path-to-your-stencil-font.woff2') format('woff2');
+}
+
+/* Progress Bar */
+#progress-bar-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px; /* Thin progress bar */
+    background-color: #ffffff; /* White background when empty */
+    z-index: 9999; /* High z-index to stay on top of everything */
+    pointer-events: none; /* Ensure it doesn’t interfere with interactions */
+}
+
+#progress-bar {
+    height: 100%;
+    width: 0%; /* Start empty */
+    background-color: #ff04dd; /* Fill color matches header */
+    transition: width 0.1s ease-out; /* Smooth transition for the fill */
+}
+
+/* Profile Picture with Lighthouse Effect */
+.home-intro img, .professional-intro img, .diversion-intro img {
+    box-shadow: 0 0 10px 5px rgba(155, 10, 239, 0.5); /* Initial glow */
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.home-intro img:hover, .professional-intro img:hover, .diversion-intro img:hover {
+    animation: lighthouse 1.5s infinite alternate;
+}
+
+/* Keyframes for Lighthouse Effect */
+@keyframes lighthouse {
+    0% {
+        box-shadow: 0 0 15px 7px rgba(146, 23, 218, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 25px 10px rgb(3, 208, 58);
+    }
+}
+
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000; /* On top of everything */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8); /* Black background with opacity */
+}
+
+/* Modal content (image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    box-shadow: 0px 8px 15px rgba(255, 255, 255, 0.3);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Close button */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Add an animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Slideshow Container */
+.slideshow {
+    position: relative;
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+/* Slides (Images) */
+.slideshow .slide {
+    display: none;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.slideshow .slide.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Navigation Buttons */
+.slideshow .prev,
+.slideshow .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 18px; /* Larger padding for bigger buttons */
+    cursor: pointer;
+    z-index: 2;
+    border-radius: 50%;
+    font-size: 1.5em; /* Increase font size for better visibility */
+}
+
+.slideshow .prev {
+    left: 0px; /* Adjust spacing */
+    top: 175px; 
+}
+
+.slideshow .next {
+    right: 0px; /* Adjust spacing */
+    top: 175px;
+}
+
+.slideshow .prev:hover,
+.slideshow .next:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Darker background on hover */
+}
+
+/* Enhanced focus outline for accessibility */
+a:focus, button:focus, .skip-link:focus {
+    outline: 3px dashed #FFCB05;
+    outline-offset: 2px;
+}
+
+.card:focus {
+    outline: 3px solid #FFCB05; /* Yellow outline for focus */
+    box-shadow: 0 0 10px rgba(255, 203, 5, 0.8); /* Glow effect */
+    transform: scale(1.02); /* Slight zoom on focus */
+}
+
+/* === Reduced Motion Styles === */
+@media (prefers-reduced-motion: reduce) {
+    /* Disable animations and transitions */
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+
+    /* Remove keyframe-based animations */
+    @keyframes lighthouse {
+        0% {
+            box-shadow: none;
+        }
+        100% {
+            box-shadow: none;
+        }
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 1;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    /* Disable carousel/slideshow animation */
+    .slideshow .slide {
+        transition: none !important;
+    }
+
+    .slideshow .prev, 
+    .slideshow .next {
+        transition: none !important;
+    }
+
+    /* Remove hover effects for interactive elements */
+    a:hover, button:hover, .card:hover {
+        transform: none !important;
+    }
+
+    /* Stop progress bar animation */
+    #progress-bar {
+        transition: none !important;
+    }
+}

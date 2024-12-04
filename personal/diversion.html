@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diversions Portfolio - Ixsael Hernandez</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="diversion-page">
+
+    <div id="progress-bar-container">
+        <div id="progress-bar"></div>
+    </div>
+
+    <!-- Header Section -->
+    <header id="header" class="diversion-header">
+        <h1>Diversions Side</h1>
+    </header>
+
+    <!-- Navigation Links -->
+    <section id="pages-nav-section" class="diversion-page-tabs">
+        
+        <a href="./../home.html" class="diversion-nav-button">Home</a>
+        <a href="./professional.html" class="diversion-nav-button">Professional</a>
+    </section>
+
+    <!-- Sticky Navigation -->
+    <nav id="professional-nav-tabs" class="diversion-nav-tabs">
+        <a href="#main" class="diversion-skip-link">About</a>
+        <a href="#content" class="diversion-skip-link">Achievements</a>
+        <a href="#footer" class="diversion-skip-link">Contact</a>
+    </nav>
+
+    <main id="main" class="diversion-main">
+
+        <!-- Introduction Section -->
+        <section id="intro" class="diversion-intro">
+
+            <img 
+                src="../images/Me-Diversions.jpg" 
+                alt="Profile picture of Ixsaael Hernandez" 
+                id="my-profile" 
+                tabindex="0" 
+                role="button" 
+                aria-label="Click to enlarge profile picture"
+                onclick="openLightbox(this.src)"
+                onkeydown="handleProfileKeydown(event, this.src)"
+            >
+
+
+            <p>Welcome to the diversions section. Explore the exciting non-professional activities and hobbies 
+                I engage in, alongside achievements in those areas.
+            </p>
+        </section>
+
+        <section id="content" class="diversion-content">
+            <div id="container" class="diversion-container">
+                <h1>Interests</h1>
+                <div class="card" tabindex="0">
+                    <div class="image-container">
+                        <div class="slideshow">
+                            <button class="prev">&#10094;</button>
+                            <img src="../images/Cars.jpg" alt="Car Hobby Image 1" class="slide active">
+                            <img src="../images/Cars-2.jpg" alt="Car Hobby Image 2" class="slide">
+                            <img src="../images/Cars-3.jpg" alt="Car Hobby Image 3" class="slide">
+                            <img src="../images/Cars-4.jpg" alt="Car Hobby Image 4" class="slide">
+                            <button class="next">&#10095;</button>
+                        </div>
+                    </div>
+                    <div class="info">
+                        <h2>Cars</h2>
+                        <p>Have done mutiple things alongside with my brother. Anything from changing 
+                            transmissions to doing cosmetic changes to each others car</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" tabindex="0">
+                    <div class="image-container">
+                        <div class="slideshow">
+                            <button class="prev">&#10094;</button>
+                            <img src="../images/Gym.jpg" alt="Gym Hobby Image 1" class="slide active">
+                            <img src="../images/Gym-2.jpg" alt="Gym Hobby Image 2" class="slide">
+                            <img src="../images/Gym-3.jpg" alt="Gym Hobby Image 3" class="slide">
+                            <button class="next">&#10095;</button>
+                        </div>
+                    </div>
+                    <div class="info">
+                        <h2>Gym</h2>
+                        <p>I have been in the gym for 3 yeras now. I have learned to accept my shortcomings
+                             and also learn how to love myself. Helped me build a dicepline and work ethic.</p>
+                    </div>
+                </div>
+                <div class="card" tabindex="0">
+                    <div class="image-container">
+                        <div class="slideshow">
+                            <button class="prev">&#10094;</button>
+                            <img src="../images/Fashion.jpg" alt="Fashion Hobby Image 1" class="slide active">
+                            <img src="../images/Fashion-2.jpg" alt="Fashion Hobby Image 2" class="slide">
+                            <img src="../images/Fashion-3.jpg" alt="Fashion Hobby Image 3" class="slide">
+                            <img src="../images/Fashion-5.jpg" alt="Fashion Hobby Image 4" class="slide">
+                            <button class="next">&#10095;</button>
+                        </div>
+                    </div>
+                    <div class="info">
+                        <h2>Fashion</h2>
+                        <p>These are some of the fashion looks I have tried to pull off. I am new to
+                             this hobbie but im excited on how much I can elevate my looks.</p>
+                    </div>
+                </div>
+                <div class="card" tabindex="0">
+                    <div class="image-container">
+                        <img src="../images/Gaming.jpg" alt="Gaming Hobby Image 1">
+                    </div>
+                    <div class="info">
+                        <h2>Gaming</h2>
+                        <p>Although I dont really have a setup here on campus I do love to game. Currently 
+                            I am using a PS2 emulation runner to play older games that I used to watch my dad play.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer Section -->
+        <section>
+            <footer id="footer" class="diversion-footer">
+                <p>Socials<br>
+                    <a href="https://www.instagram.com/ixsa.st3/">Instagram</a><br>
+                    <a href="hixsaael@umich.edu">G-Mail</a>
+                </p>
+            </footer>
+        </section>
+    </main>
+
+    <!-- Modal for Enlarged Image -->
+    <div id="image-modal" class="modal" aria-hidden="true" tabindex="-1" role="dialog" aria-label="Enlarged Image">
+        <button class="close" aria-label="Close" onclick="closeLightbox()">&times;</button>
+        <img class="modal-content" id="modal-image" alt="Enlarged image">
+    </div>
+
+    <script>
+        window.addEventListener("scroll", () => {
+            const progressBar = document.getElementById("progress-bar");
+            const totalHeight = document.body.scrollHeight - window.innerHeight;
+            const scrollProgress = (window.scrollY / totalHeight) * 100;
+            progressBar.style.width = `${scrollProgress}%`;
+        });
+    
+        // Ensure bar is full if no scrolling is needed
+        window.addEventListener("resize", () => {
+            const progressBar = document.getElementById("progress-bar");
+            const totalHeight = document.body.scrollHeight - window.innerHeight;
+            if (totalHeight <= 0) {
+                progressBar.style.width = "100%";
+            } else {
+                progressBar.style.width = `${(window.scrollY / totalHeight) * 100}%`;
+            }
+        });
+    
+        // Initial check for when the page loads
+        document.addEventListener("DOMContentLoaded", () => {
+            const progressBar = document.getElementById("progress-bar");
+            const totalHeight = document.body.scrollHeight - window.innerHeight;
+            if (totalHeight <= 0) {
+                progressBar.style.width = "100%";
+            }
+        });
+
+        function openLightbox(src) {
+            const modal = document.getElementById("image-modal");
+            const modalImage = document.getElementById("modal-image");
+        
+            modal.style.display = "block";
+            modalImage.src = src; // Set the source of the image in the modal
+        }
+        
+        function closeLightbox() {
+            const modal = document.getElementById("image-modal");
+            modal.style.display = "none";
+        }
+        
+        // Close the modal when clicking outside the image
+        window.onclick = function (event) {
+            const modal = document.getElementById("image-modal");
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        };
+
+        // Tracks the current slide index for each card
+let currentSlides = [];
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Initialize slide indices for all cards
+    const cards = document.querySelectorAll(".card");
+    cards.forEach(() => currentSlides.push(0));
+
+    // Set up event listeners for all prev and next buttons
+    document.querySelectorAll(".prev").forEach((button, index) => {
+        button.addEventListener("click", () => changeSlide(-1, index));
+    });
+
+    document.querySelectorAll(".next").forEach((button, index) => {
+        button.addEventListener("click", () => changeSlide(1, index));
+    });
+});
+
+function changeSlide(direction, cardIndex) {
+    const card = document.querySelectorAll(".card")[cardIndex];
+    const slides = card.querySelectorAll(".slide");
+
+    // Update slide visibility
+    slides[currentSlides[cardIndex]].classList.remove("active");
+    currentSlides[cardIndex] =
+        (currentSlides[cardIndex] + direction + slides.length) % slides.length;
+    slides[currentSlides[cardIndex]].classList.add("active");
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Trap focus inside the modal
+    function trapFocus(modal) {
+        const focusableElements = modal.querySelectorAll('button, [tabindex="0"], img');
+        const firstFocusable = focusableElements[0];
+        const lastFocusable = focusableElements[focusableElements.length - 1];
+
+        modal.addEventListener('keydown', (e) => {
+            if (e.key === 'Tab') {
+                if (e.shiftKey && document.activeElement === firstFocusable) {
+                    e.preventDefault();
+                    lastFocusable.focus();
+                } else if (!e.shiftKey && document.activeElement === lastFocusable) {
+                    e.preventDefault();
+                    firstFocusable.focus();
+                }
+            }
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+
+        firstFocusable.focus();
+    }
+
+    // Handle modal open
+    function openLightbox(src) {
+        const modal = document.getElementById("image-modal");
+        const modalImage = document.getElementById("modal-image");
+
+        modalImage.src = src;
+        modal.setAttribute("aria-hidden", "false");
+        modal.style.display = "block";
+        trapFocus(modal);
+    }
+
+    // Handle modal close
+    function closeLightbox() {
+        const modal = document.getElementById("image-modal");
+        modal.setAttribute("aria-hidden", "true");
+        modal.style.display = "none";
+    }
+
+    // Handle slideshow navigation
+    document.querySelectorAll(".prev, .next").forEach((button) => {
+        button.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+                button.click();
+            }
+        });
+    });
+});
+
+function handleProfileKeydown(event, src) {
+    if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        openLightbox(src);
+    }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Add event listeners for cards
+    const cards = document.querySelectorAll(".card");
+    cards.forEach((card) => {
+        // Highlight focus
+        card.addEventListener("focus", () => {
+            card.classList.add("focused");
+        });
+        card.addEventListener("blur", () => {
+            card.classList.remove("focused");
+        });
+
+        // Handle Enter or Space key on card
+        card.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                card.click(); // Simulates a click action
+            }
+        });
+    });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Function to open the lightbox
+    function openLightbox(src) {
+        const modal = document.getElementById("image-modal");
+        const modalImage = document.getElementById("modal-image");
+
+        modalImage.src = src; // Set the source of the modal image
+        modal.setAttribute("aria-hidden", "false");
+        modal.style.display = "block";
+
+        // Trap focus within the modal
+        const closeButton = modal.querySelector(".close");
+        closeButton.focus(); // Focus on the close button
+    }
+
+    // Function to close the lightbox
+    function closeLightbox() {
+        const modal = document.getElementById("image-modal");
+        modal.setAttribute("aria-hidden", "true");
+        modal.style.display = "none";
+
+        // Return focus to the triggering element (profile image)
+        const lastFocusedElement = document.querySelector("[data-last-focused='true']");
+        if (lastFocusedElement) {
+            lastFocusedElement.focus();
+        }
+    }
+
+    // Event listener for Esc key to close the modal
+    document.addEventListener("keydown", (event) => {
+        const modal = document.getElementById("image-modal");
+        if (modal.style.display === "block" && event.key === "Escape") {
+            closeLightbox();
+        }
+    });
+
+    // Function to handle profile image keydown for keyboard users
+    function handleProfileKeydown(event, src) {
+        if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            const triggeringElement = event.target;
+            triggeringElement.setAttribute("data-last-focused", "true"); // Mark this element as last focused
+            openLightbox(src);
+        }
+    }
+
+    // Assign keydown event to profile pictures
+    const profileImages = document.querySelectorAll(".home-intro img, .professional-intro img, .diversion-intro img");
+    profileImages.forEach((image) => {
+        image.addEventListener("keydown", (event) => handleProfileKeydown(event, image.src));
+    });
+});
+    </script>
+    
+</body>
+</html>
